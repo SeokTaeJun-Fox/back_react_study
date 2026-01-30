@@ -1,10 +1,6 @@
 import './App.css';
 import Jsx01 from './tutorial/Jsx01'; //해당 파일에 Jsx01을 가져온다.
-import Count from './state/Count';
-import Sound from './state/Sound';
-import Name from './state/Name';
-import Color from './state/Color';
-import Hobby from './state/Hobby';
+import CheckboxContainer from './map/expert/CheckboxContainer';
 
 //App()은 컴포넌트
 //컴포넌트의 모임은 App()이다.
@@ -35,7 +31,7 @@ function App() {
       {/* <Sound /> */}
       {/* <Name /> */}
       {/* <Color /> */}
-      <Hobby />
+      <CheckboxContainer />
     </>
   );
 }
