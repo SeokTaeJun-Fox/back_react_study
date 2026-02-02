@@ -1,6 +1,6 @@
 import './App.css';
 import Jsx01 from './tutorial/Jsx01'; //해당 파일에 Jsx01을 가져온다.
-import CheckboxContainer from './map/expert/CheckboxContainer';
+import FoodContainer from './ref/expert/FoodContainer';
 
 //App()은 컴포넌트
 //컴포넌트의 모임은 App()이다.
@@ -28,10 +28,7 @@ function App() {
 
     //자바스크립트로부터 태그를 객체라부름
     <>
-      {/* <Sound /> */}
-      {/* <Name /> */}
-      {/* <Color /> */}
-      <CheckboxContainer />
+      <FoodContainer />
     </>
   );
 }

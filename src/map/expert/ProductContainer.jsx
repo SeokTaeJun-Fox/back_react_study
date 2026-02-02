@@ -57,17 +57,14 @@ const ProductContainer = () => {
       if(e.key === "Enter")
       {
         inputName = e.target.value;
-        if(productList.some(({name}) => inputName === name))
-        {
+        if(productList.some(({name}) => inputName === name)){
           const tmpPrice = productList.find(({name, price}) => name === inputName)["price"];
 
-          if(income < tmpPrice)
-          {
+          if(income < tmpPrice){
             alert("잔액이 부족합니다.")
             return;
           }
-          else
-          {
+          else{
             setPrice(tmpPrice);
             buyList.push(productList.find((data) => data.name === inputName));
             setBuyList(buyList);
@@ -77,8 +74,7 @@ const ProductContainer = () => {
           }
         }
 
-        else if(inputName === "종료")
-        {
+        else if(inputName === "종료"){
           const newArray = buyList.map(({name, price}, i) => (
             <Product key={i} name={name} price={price} />
           ));
