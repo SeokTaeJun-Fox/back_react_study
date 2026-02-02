@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import FoodElement from './FoodElement';
 
 // 코드를 완성시켜라! expert!
 const FoodContainer = () => {
@@ -26,13 +27,14 @@ const FoodContainer = () => {
 
   // 컴포넌트로 분리
   const foodList = foods.map(({kor, eng}, i) => (
-    <li key={i}>
-      <input 
-        type="checkbox"
-        onChange={(e) => {handleCheckboxOnChange(e, i)}}
-      />
-      <span>{kor}({eng})</span>
-    </li>
+    // <li key={i}>
+    //   <input 
+    //     type="checkbox"
+    //     onChange={(e) => {handleCheckboxOnChange(e, i)}}
+    //   />
+    //   <span>{kor}({eng})</span>
+    // </li>
+    <FoodElement key={i} onChange={(e) => {handleCheckboxOnChange(e, i)}} index={i} kor={kor} eng={eng} />
   ))
 
   return (
