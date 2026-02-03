@@ -1,6 +1,11 @@
 import './App.css';
 import Jsx01 from './tutorial/Jsx01'; //해당 파일에 Jsx01을 가져온다.
-import FoodContainer from './ref/expert/FoodContainer';
+import SideEffectMount from './lifecycle/function/sideeffect/SideEffectMount';
+import SideEffectWithMap from './lifecycle/function/sideeffect/SideEffectWithMap';
+import ProductContainer from './lifecycle/function/memoization/ProductContainer';
+import CharContainer from './context/basic/CharContainer';
+import ParentContainer from './context/normal/ParentContainer';
+import AnimalsContainer from './context/expert/AnimalsContainer';
 
 //App()은 컴포넌트
 //컴포넌트의 모임은 App()이다.
@@ -28,7 +33,7 @@ function App() {
 
     //자바스크립트로부터 태그를 객체라부름
     <>
-      <FoodContainer />
+      <AnimalsContainer />
     </>
   );
 }
