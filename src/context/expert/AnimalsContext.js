@@ -4,23 +4,23 @@ import { createContext, useState } from "react";
 export const AnimalsContext = createContext({
   state: {animals: []},
   actions: {insert: () => {}, remove: () => {}}
-});
+})
 
-//2. 제공
+// 2. 제공
 export const AnimalsProvider = ({children}) => {
   
   const [animals, setAnimals] = useState(["누렁이", "점박이", "얼룩이"])
-
   const value = {
     state: {
       animals
     },
     actions: {
-      insert: (newAnimal) => {
-        setAnimals([...animals, newAnimal]);
-      },
-
-      remove: () => {}
+      insert: (animal) => {setAnimals(animals.concat(animal))},
+      remove: (index) => {
+        const newArray = [...animals];
+        newArray.splice(index, 1);
+        setAnimals(newArray);
+      }
     }
   }
 

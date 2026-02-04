@@ -1,11 +1,8 @@
 import './App.css';
 import Jsx01 from './tutorial/Jsx01'; //해당 파일에 Jsx01을 가져온다.
-import SideEffectMount from './lifecycle/function/sideeffect/SideEffectMount';
-import SideEffectWithMap from './lifecycle/function/sideeffect/SideEffectWithMap';
-import ProductContainer from './lifecycle/function/memoization/ProductContainer';
-import CharContainer from './context/basic/CharContainer';
-import ParentContainer from './context/normal/ParentContainer';
-import AnimalsContainer from './context/expert/AnimalsContainer';
+import { Route, RouterProvider, Routes } from 'react-router-dom';
+import router from './router/router';
+import { RouteProvider } from './context/expert/RouteContext';
 
 //App()은 컴포넌트
 //컴포넌트의 모임은 App()이다.
@@ -33,7 +30,18 @@ function App() {
 
     //자바스크립트로부터 태그를 객체라부름
     <>
-      <AnimalsContainer />
+      {/* <AnimalsContainer /> */}
+      {/* 어디(URI, PATH)에 뭐(컴포넌트) 보여줄래? */}
+      {/* <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/intro" element={<Intro />}/>
+        <Route />
+        <Route />
+      </Routes> */}
+
+      <RouteProvider>
+        <RouterProvider router={router} />
+      </RouteProvider>
     </>
   );
 }

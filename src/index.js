@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';  //확장자가 없으면 javascript일 확률 높다.
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, RouterProvider } from 'react-router-dom';
+import router from './router/router';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    <App /> 
+    {/* <App />  */}
+    {/* <BrowserRouter>
+      <App />
+    </BrowserRouter> */}
+    <App />
   </>
 );
 
