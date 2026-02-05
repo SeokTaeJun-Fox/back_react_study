@@ -20,18 +20,20 @@ export const RouteContext = createContext({
 })
 
 export const RouteProvider = ({children}) => {
-
-  const [previousUrl, setPreviousUrl] = useState("");
-  const [user, setUser] = useState({userName: "", userAge: 0, userAddress: "", userPhone: ""});
+  const [previousUrl, setPreviousUrl] = useState("")
+  const [user, setUser] = useState({userName: "", userAge: 0, userAddress: "", userPhone: ""})
+  const [isLogin, setIsLogin] = useState(false)
 
   const value = {
     state : {
       previousUrl: previousUrl,
-      user: user
+      user: user,
+      isLogin: isLogin
     },
     actions: {
       setPreviousUrl: setPreviousUrl,
-      setUser: setUser
+      setUser: setUser,
+      setIsLogin: setIsLogin
     }
   }
 
@@ -41,3 +43,4 @@ export const RouteProvider = ({children}) => {
     </RouteContext.Provider>
   )
 }
+

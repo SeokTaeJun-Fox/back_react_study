@@ -10,6 +10,12 @@ import Community from "./detail/Community";
 import NotFound from "./notfound/NotFound";
 import NotUser from "./user/NotUser";
 import User from "./user/User";
+import Zustand01 from "../zustand/Zustand01";
+import ZustandLayout from "../zustand/ZustandLayout";
+import Zustand02 from "../zustand/Zustand02";
+import Zustand03 from "../zustand/Zustand03";
+import AuthLayout from "../zustand/AuthLayout";
+import SignUp from "../hooks/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +61,30 @@ const router = createBrowserRouter([
         element: <NotUser />
       },
     ]
+  },
+  {
+    path: "/zustand",
+    element: <ZustandLayout />,
+    children: [
+      {
+        path: "02",
+        element: <Zustand02 />,
+      },
+      {
+        path: "03",
+        element: <AuthLayout />,
+        children: [
+          {
+            path: "",
+            element: <Zustand03 />
+          }
+        ]
+      }
+    ]
+  },
+  {
+    path: "/sign-up", //가독성때문에 path는 케밥 표기법써야한다.
+    element: <SignUp />
   },
   {
     path: "*",
